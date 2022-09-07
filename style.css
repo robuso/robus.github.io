@@ -1,5 +1,5 @@
 :root {
-    font-family: Inconsolata, 'Fira Code', Hack, 'Courier New', Courier, monospace;
+    font-family: 'Inconsolata', 'Fira Code', 'Hack', 'Courier New', Courier, monospace;
     font-weight: 100;
     box-sizing: border-box;
     outline-style: none;
@@ -19,7 +19,7 @@ body {
     /* background-color: rgb(0, 255, 0); */
     /* background-color: var(--background); */
     margin: auto;
-    font-family: 'SF Hello', 'Open Sans';
+    font-family: 'SF Hello', 'Open Sans', Helvetica, sans-serif;
     font-weight: 100;
     background-color: hsl(0, 0%, 95%);
     font-size: 1.5em;
