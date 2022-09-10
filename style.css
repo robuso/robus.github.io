@@ -57,6 +57,10 @@ p {
     text-align: justify;
 }
 
+#email {
+    text-align: left;
+}
+
 code {
     color: rgb(244, 153, 49);
     font-family: 'Fira Code';
