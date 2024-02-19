@@ -4,20 +4,20 @@ import subprocess
 import sqlite3
 
 # from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+# from watchdog.events import FileSystemEventHandler
 
 
-class MyHandler(FileSystemEventHandler):
-    def __init__(self, conn, output_directory):
-        super().__init__()
-        self.conn = conn
-        self.created_files = set()
-        self.output_directory = output_directory
+# class MyHandler(FileSystemEventHandler):
+#     def __init__(self, conn, output_directory):
+#         super().__init__()
+#         self.conn = conn
+#         self.created_files = set()
+#         self.output_directory = output_directory
 
-    def on_created(self, event):
-        if event.is_directory:
-            return
-        self.created_files.add(event.src_path)
+#     def on_created(self, event):
+#         if event.is_directory:
+#             return
+#         self.created_files.add(event.src_path)
 
 
 def create_database(conn):
@@ -68,7 +68,7 @@ def main():
     created_files = {row[0] for row in cursor.fetchall()}
 
     # Initialize the event handler
-    event_handler = MyHandler(conn, output_directory)
+    # event_handler = MyHandler(conn, output_directory)
 
     # Check for newly created files and convert them
     for root, _, files in os.walk(directory_path):
