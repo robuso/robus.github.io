@@ -25,3 +25,8 @@ img {
     text-align: center;
     margin: 0em -5em;
 }
+
+nav ul li a:hover {
+    color: #ddd !important;
+    /* Change color on hover */
+}

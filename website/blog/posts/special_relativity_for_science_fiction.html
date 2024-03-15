@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Olin Robus" />
+  <title>Special Relativity</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="/style.css" />
+  
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+
+<header style="font-family: 'Libertinus Sans';background-color: grey;color: white;text-align: center;">
+	<nav>
+		<ul style="margin: 0;padding: 0;list-style-type: none;">
+			<li style="display: inline;margin-right: 3rem;"><a style="text-decoration: none;color: white;" href="/index.html">Home</a></li>
+			<li style="display: inline;margin-right: 3rem;"><a style="text-decoration: none;color: white;" href="/website/about.html">About</a></li>
+			<li style="display: inline;margin-right: 3rem;"><a style="text-decoration: none;color: white;" href="/website/blog/writings.html">Writing</a></li>
+		</ul>
+	</nav>
+</header>
+<header id="title-block-header">
+<h1 class="title">Special Relativity</h1>
+<p class="author">Olin Robus</p>
+<p class="date">24/03/14</p>
+</header>
+<h2 id="section">0</h2>
+<p>I love science fiction, and I love the idea of space travel and space
+exploration. But as I age my ability to suspend disbelief declines, and
+I lose ever more patience with unrealistic depictions of traversing the
+genuinely incomprehensible distances that space travel requires.</p>
+<p>But it doesn’t have to be like this! I’m happy to suspend disbelief
+if some attempt has been made to reckon with the consequences of a
+fictional FTL solution. This essay is an attempt to, for myself, get
+clear on all the various aspects of Special Relativity one must grapple
+with in order to have a happily plausible FTL. If, in the process, we
+verge into philosophical territory and find ourselves meditating on the
+intersection of epistemology, metaphysics, the philosophy of science,
+and the philosophy of language, well, that’s my fault.</p>
+<h2 id="the-basics">1 The Basics</h2>
+<p>Special Relativity is a theory of how to measure distances between
+events. There are a couple of things to say about this already—first, to
+say that it is a theory is to simply say that it is a mathematical model
+(or rather a set of such models) that have (a) specific
+<em>correlates</em> to the experienced world, and (b) a
+<em>procedure</em> for how to take those correlates and produce
+<em>results</em> that are themselves possibly correlated to our
+experience in the appropriate ways. While this may not be a usual way to
+speak of a scientific theory, we can see it maps on to more typical
+accounts—the correlates are typically spoken about as ‘initial’ or
+‘boundary’ conditions for a theory, while the procedure is more or less
+the collection of ‘laws’ and the constellation of practices and norms
+around their application and calculation. Finally, the results of
+operating on the correlates via the procedure are what are usually
+understood as ‘predictions’. So, in more familiar language, we might
+gloss the notion of a scientific theory as “The application of natural
+laws on initial conditions to produce predictions.”</p>
+<p>Now, just to be clear, <em>this is not how science works, nor is it
+an accurate picture of how scientists see themselves</em>. Indeed, it
+obviously falls short in many sciences where initial conditions, laws,
+and predictions are not and clearly defined as they are
+in—say—mathematical physics. My point in characterizing Special
+Relativity (SR) this way is to emphasize what it looks like ‘from the
+outside’ as it were. As we get deeper into learning about SR, it will
+become easier and easier to think and speak as if we were thinking and
+speaking about the world, when we are in fact speaking about a theory
+which <em>cannot</em> be an adequate description of reality, simply
+because it is not an adequate description of our experience (here
+philosophers would say the theory is not ‘empirically adequate’).
+Nevertheless, it’s still a worthwhile theory to study, since it
+<em>does</em> serve as an incredibly adequate theory for our experiences
+within a certain domain.</p>
+<p>As I said above, SR is a theory about how to measure distances
+between events. Now that I’ve gotten off my high-horse about what a
+theory is, let’s look at the other parts of this statement. In
+particular, what stands in most need of explanation is what we mean by
+‘distance’ and ‘event’. You may have heard that SR isn’t about space and
+time, but rather <em>spacetime</em>. And that’s not wrong—Einstein and
+others before him recognized that measurements of distance, especially
+in the realm of the physical sciences, could not afford to decouple the
+notions of spatial and temporal distance. This becomes clearest when
+attempting to measure things which are either very big, or moving very
+quickly. But an important consequence of this was the recognition that
+we cannot measure distances between objects, or ‘things’, but instead
+must measure <em>events</em>. ‘Event’ is a pedestrian word that has been
+elevated to a privileged status in SR and the physical sciences more
+generally. An event for SR (and for us) is analogous to a point in
+Euclidean geometry—a dimensionless geometric primitive. But with SR
+being specified in a 4-dimensional vector space, one of whose dimensions
+is ‘time’, the basic idea of a point was extended to the notion of a
+dimensionless, instantaneous, ‘happening’. Thus, just like <span
+class="math inline">\mathbb{R}^2</span> can be thought of as constructed
+out of the points <span class="math inline">p</span> <span
+class="math inline">\in</span> {<span
+class="math inline">\mathbb{R}\times\mathbb{R}</span>}, the spacetime of
+SR is constructed out of the union of all ‘events’.</p>
+</body>
+</html>
