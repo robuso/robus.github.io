@@ -19,7 +19,7 @@ def get_file_hash(file_path):
     return file_hash
 
 
-def convert_with_pandoc(input_file, output_file, css_file, js_file, header):
+def convert_with_pandoc(input_file, output_file, css_file, js_file):
     try:
         subprocess.run(
             [
@@ -29,13 +29,9 @@ def convert_with_pandoc(input_file, output_file, css_file, js_file, header):
                 output_file,
                 "--css",
                 css_file,
-                "--include-in-header",
+                # "--include-in-header",
                 js_file,
-                "--katex",
-                "-B", # "--include-before-body="
-                header,
-
-                
+                # "--katex",
             ],
             check=True,
         )
@@ -49,9 +45,9 @@ def main():
     directory_path = "/Users/orobus/Documents/dev/robuso.github.io/_writing_folder"
     output_directory = "/Users/orobus/Documents/dev/robuso.github.io/website/blog/posts"
     css_file = "/style.css"
-    js_file = "/Users/orobus/Documents/dev/robuso.github.io/script.js"
+    js_file = "/Users/orobus/Documents/dev/robuso.github.io/sidenotes.js"
     database_file = "/Users/orobus/Documents/dev/robuso.github.io/files.db"
-    header = "header.html"
+    # header = "header.html"
 
     # Connect to the database
     conn = sqlite3.connect(database_file)
@@ -74,7 +70,7 @@ def main():
                     output_file = os.path.join(
                         output_directory, file.replace(".md", ".html")
                     )
-                    convert_with_pandoc(file_path, output_file, css_file, js_file, header)
+                    convert_with_pandoc(file_path, output_file, css_file, js_file)
                     # Update or insert the file in the database
                     cursor.execute(
                         "REPLACE INTO files (path, hash) VALUES (?, ?)",
