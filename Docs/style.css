@@ -22,7 +22,7 @@ body {
     font-family: 'SF Hello', 'Open Sans', Helvetica, sans-serif;
     font-weight: 100;
     background-color: hsl(0, 0%, 95%);
-    font-size: 1.5em;
+    font-size: 1em;
     color: rgb(0, 0, 0)
 }
 
@@ -54,7 +54,7 @@ a {
 p {
     /* background-color: rgb(255, 255, 0); */
     /* text-indent: 2em; */
-    text-align: justify;
+    text-align: left;
 }
 
 #email {
